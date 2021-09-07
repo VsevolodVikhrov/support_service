@@ -11,7 +11,7 @@ class Theme(models.Model):
 
 class Ticket(models.Model):
     title = models.CharField(max_length=100)
-    theme = models.OneToOneField(Theme, on_delete=models.DO_NOTHING)
+    theme = models.ForeignKey(Theme, on_delete=models.DO_NOTHING)
     description = models.CharField(max_length=300)
     date_created = models.TimeField(auto_now_add=True)
     is_active = models.BooleanField(default=True)
